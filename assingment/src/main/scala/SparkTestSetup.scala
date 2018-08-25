@@ -186,7 +186,7 @@ object Main  {
             // puts the new data on another path with the same name as
             // the file but different folder
             val newpath = pattern.replaceFirstIn(files(y).getPath, targetDirPath)
-            println(y + " arquivos processados")
+            println((y+1) + " arquivos processados")
 
             val objs: Array[String] = readFile(files(y).getPath)
             val jsonWriter = new PrintWriter(new File(newpath))
