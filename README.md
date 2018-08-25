@@ -17,7 +17,6 @@ está indisponível, só descobri onde o artigo estava depois de dois dias :D e 
 a paste 'core' não pode ser baixada, impossibilitando a execução do código.
 
 Obs2: Ainda não tenho uma noção boa de Spark (é a primeira vez que uso tanto spark quanto
-scala) por isso todo o código foi feito usando scala apenas.
-
+scala), encontrei vários problemas ao tentar configurar o ambiente, por isso todo o código foi feito usando scala apenas.
 
 
