@@ -161,10 +161,19 @@ object Main  {
   // retrieves the json array of objects from every file provided and feeds them into
   // parseElement for processing, then writes the data into new files
   def parseJson()  {
+
+    // check if our target file is available, if not create it
+    val targetDirPath = "../tmp/new_data"
+    val targetDir = new File(targetDirPath)
+    if(!(targetDir.exists && targetDir.isDirectory)){
+        targetDir.mkdir()
+    }
+
     val dir = new File("../tmp/sample")
     if (dir.exists && dir.isDirectory) {
         // gets all files from the sample folder inside tmp
         val files  = dir.listFiles.filter(_.isFile).toList
+
 
 
         val pattern = "../tmp/sample".r
@@ -176,7 +185,7 @@ object Main  {
 
             // puts the new data on another path with the same name as
             // the file but different folder
-            val newpath = pattern.replaceFirstIn(files(y).getPath, "../tmp/new_data")
+            val newpath = pattern.replaceFirstIn(files(y).getPath, targetDirPath)
             println(y + " arquivos processados")
 
             val objs: Array[String] = readFile(files(y).getPath)
